@@ -57,7 +57,7 @@
                 m = checkTime(m);
                 s = checkTime(s);
                 var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                document.getElementById('clock').innerHTML = today.toLocaleDateString("ja-JP", options) + " - " + h + ":" + m + ":" + s;
+                document.getElementById('clock').innerHTML = today.toLocaleDateString("en-US", options) + " - " + h + ":" + m + ":" + s;
                 var t = setTimeout(startTime, 500);
             }
             function checkTime(i)
