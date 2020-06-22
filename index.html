@@ -37,22 +37,11 @@
                 //font-size: 12px;
                 //height: 800px;
             }
-            #weather
-            {
-                //  -moz-transform: scale(2);
-                //  -moz-transform-origin: 0 0;
-                //  -webkit-transform: scale(2);
-                //  -webkit-transform-origin: 0 0;
-                overflow: hidden;
-                margin-top: 10px;
-                margin-bottom: 10px;
-                padding-top: 10px;
-                }
-            #news
+            #right
             {
                 overflow: hidden;
             }
-            #dashboard
+            #left
             {
                 overflow: hidden;
             }
@@ -83,29 +72,19 @@
         <br>
             <table><tr>
                 <td style='width:900px'>
-                    <iframe id="weather" scrolling="no" width="800px" height="375px" src="weather.py" allowtransparency="true" frameborder="0"></iframe>
-                    <iframe id="dashboard" scrolling="no" width="800px" height="400px" src="/dashboard/" allowtransparency="true" frameborder="0"></iframe>
+                    <iframe id="left" scrolling="no" width="850px" height="815px" src="news1.html" allowtransparency="true" frameborder="0"></iframe>
                 </td>
-                <td style='width:850px'>
-                    <iframe id="news" scrolling="no" width="850px" height="815px" src="feed.py" allowtransparency="true" frameborder="0"></iframe>
+                <td style='width:900px'>
+                    <iframe id="right" scrolling="no" width="850px" height="815px" src="news2.html" allowtransparency="true" frameborder="0"></iframe>
                 </td>
             </tr></table>
-                        <script>
-                                window.setInterval("reload_news();", 20000);
-                                window.setInterval("reload_weather();", 155000);
-                                window.setInterval("reload_dashboard();", 200000);
-                                function reload_news()
-                                {
-                                        document.getElementById("news").src = "feed.py";
-                                }
-                                function reload_weather()
-                                {
-                                        document.getElementById("weather").src = "weather.py";
-                                }
-                                function reload_dashboard()
-                                {
-                                        document.getElementById("dashboard").src = "/dashboard/";
-                                }
-                        </script>
+            <script>
+                 window.setInterval("reload_news();", 20000);
+                 function reload_news()
+                 {
+                     document.getElementById("left").src = "news1.html";
+                     document.getElementById("right").src = "news2.html";
+                 }
+            </script>
     </body>
 </html>
