@@ -13,7 +13,7 @@
                 padding-left: 50px;
 				margin-left: 50px;
             }
-            #clock
+            #topline
             {
                 align: center;
                 text-align: center;
@@ -71,17 +71,19 @@
 				var jsonFile = new XMLHttpRequest();
 				jsonFile.open("GET", url, true);
 				jsonFile.send();
-				jsonFile.onreadystatechange = function() {
-				if(jsonFile.readyState == 4 && jsonFile.status == 200)
+				jsonFile.onreadystatechange = function()
 				{
-					document.getElementById("weather").innerHTML = jsonFile.responseText;
+					if(jsonFile.readyState == 4 && jsonFile.status == 200)
+					{
+						document.getElementById("weather").innerHTML = jsonFile.responseText;
+					}
 				}
 				var t = setTimeout(getWeather, 400000);
 			}
         </script>
     </head>
     <body>
-        <div><span id="clock"></span> / <span id="weather"></span></div>
+        <div id="topline"><span id="clock"></span> / <span id="weather"></span></div>
         <script>startTime(); getWeather();</script>
         <br>&nbsp;<br>
             <table><tr>
