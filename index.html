@@ -57,7 +57,7 @@
                 m = checkTime(m);
                 s = checkTime(s);
                 var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-                document.getElementById('clock').innerHTML = today.toLocaleDateString("en-US", options) + " - " + h + ":" + m + ":" + s;
+                document.getElementById('clock').innerHTML = today.toLocaleDateString("en-CA", options) + " - " + h + ":" + m + ":" + s;
                 var t = setTimeout(startTime, 500);
             }
             function checkTime(i)
