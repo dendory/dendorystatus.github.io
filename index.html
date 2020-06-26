@@ -56,8 +56,8 @@
                 var s = today.getSeconds();
                 m = checkTime(m);
                 s = checkTime(s);
-                var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-                document.getElementById('clock').innerHTML = today.toLocaleDateString("en-CA", options) + " / " + h + ":" + m + ":" + s;
+                var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.getElementById('clock').innerHTML = today.toLocaleDateString("en-CA", options) + " - " + h + ":" + m + ":" + s;
                 var t = setTimeout(startTime, 500);
             }
             function checkTime(i)
@@ -83,7 +83,7 @@
         </script>
     </head>
     <body>
-        <div id="topline"><span id="clock"></span> / <span id="weather"></span></div>
+        <div id="topline"><span id="clock"></span> - <span id="weather"></span></div>
         <script>startTime(); getWeather();</script>
         <br>&nbsp;<br>
             <table><tr>
